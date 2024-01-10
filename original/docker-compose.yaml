@@ -1,0 +1,27 @@
+version: "3.4" 
+
+services:
+  server:
+    build: .
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 9078:80
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'supersecret'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'monMot2Pass'
+      MYSQL_DATABASE: 'ifage'
+    volumes:
+      - ./mysqldata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=db
+    depends_on:
+      - db

@@ -1,0 +1,23 @@
+{
+    "name": "kneubuhl/testcomposer",
+    "description": "on test composer",
+    "license": "Apache 2.0",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Laurent Kneubühl",
+            "email": "lkneub@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "nesbot/carbon": "^2.65",
+        "symfony/yaml": "v6.2.2",
+        "altorouter/altorouter": "^2.0",
+        "symfony/var-dumper": "^6.2"
+    }
+}
